@@ -1,0 +1,140 @@
+body {
+		font-family: 'Inter', serif;
+		margin: 0;
+		padding: 0;
+	}
+
+	header {
+		background-color: #ffffff;
+		flex-direction: row;
+		align-items: center;
+		text-align: center; /* Add this line */
+		padding: 10px;
+	}
+
+	nav {
+		flex-grow: 1;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	nav a {
+		margin-left: 20px;
+		color: #333;
+		text-decoration: none;
+	}
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		font-family: 'Inter', sans-serif;
+		font-weight: 700;
+	}
+
+	.grid {
+		background-color: #f1f9ff;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 20px;
+		padding: 20px;
+	}
+
+	.grid-item {
+		background-color: #c9e6ff;
+		border-radius: 10px;
+		overflow: hidden;
+		padding: 10px;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+		max-width: 300px;
+  	max-height: 400px;
+	}
+
+	.grid-item:hover {
+		transform: translateY(-10px);
+	}
+
+	.grid-item p {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.search-box {
+		flex-grow: 1;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 20px;
+		font-family: 'Inter', serif;
+	}
+
+	.search-box input {
+		padding: 5px;
+		border: none;
+		border-radius: 12px;
+		font-size: 16px;
+	}
+
+	input[type="text"] {
+		width: 208px; /* increases width */
+		height: 16px; /* increases height */
+		padding: 16px; /* adds padding inside the box */
+		border: none; /* removes the border */
+		border-radius: 12px; /* adds rounded corners */
+		background-color: #f1f9ff;
+	}
+
+	.logo {
+		display: inline-block;
+		margin-top: 20px;
+	}
+
+	.logo img {
+		height: 50px;
+		width: 50px;
+	}
+
+	footer {
+		text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+	@media (max-width: 767px) {
+		header {
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 20px;
+		}
+
+		nav {
+			margin-top: 20px;
+			justify-content: center;
+		}
+
+		h1 {
+			font-family: 'Inter', sans-serif;
+			font-size: 24px;
+		}
+
+		.grid {
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
+
+		.grid-item p {
+			font-size: 14px;
+		}
+
+		.search-box {
+			width: 180px;
+			margin: 10px;
+	}
+
+	.search-box input {
+			padding: 5px;
+			font-size: 14px;
+	}
+
+}

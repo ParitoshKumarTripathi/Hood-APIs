@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>API Website</title>
+	<link href="https://fonts.googleAPIs.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<script src="https://kit.fontawesome.com/376f9c1dcc.js" crossorigin="anonymous"></script>
+<body>
+	<header>
+		<img src="images/API_logo.svg" class="logo" alt="Website Logo">
+		<h1>API Website</h1>
+		<p>Find your favorite APIs and start making Apps today!</p>
+		<input type="text" id="search-box" class="search-box" placeholder="Search APIs...">
+	</header>
+
+	<div class="grid">
+		<div class="grid-item" onclick="location.href='';">
+			<i class="fa-brands fa-github"></i>
+			<p style="display: inline;"><b>Random Letter API</b></p>
+			<p>Returns a Random English Letter.</p>
+		</div>
+		<div class="grid-item" onclick="location.href='';">
+			<i class="fa-brands fa-github"></i>
+			<p style="display: inline;"><b>Random Word API</b></p>
+			<p>Returns a Random Word from a list of 3000+ words.</p>
+		</div>
+		<div class="grid-item" onclick="location.href='';">
+			<i class="fa-brands fa-github"></i>
+			<p style="display: inline;"><b>Random Emoji API</b></p>
+			<p>Returns a Random Emoji.</p>
+		</div>
+		<div class="grid-item" onclick="location.href='';">
+			<i class="fa-brands fa-github"></i>
+			<p style="display: inline;"><b>Dictionary API</b></p>
+			<p>Returns word origin, definition, pronunciation, part of speech, synonym, antonym and from a list of 450K+ words.</p>
+		</div>
+		<div class="grid-item" onclick="location.href='';">
+			<i class="fa-brands fa-github"></i>
+			<p style="display: inline;"><b>Wallpaper API</b></p>
+			<p>Returns beautiful wallpaper images.</p>
+		</div>
+	</div>
+
+<script>
+const searchBox = document.getElementById('search-box');
+const gridItems = document.querySelectorAll('.grid-item');
+
+searchBox.addEventListener('input', () => {
+	const searchTerm = searchBox.value.toLowerCase();
+
+	gridItems.forEach((item) => {
+		const pTags = item.querySelectorAll('p');
+		const heading = pTags[0].textContent.toLowerCase()
+		const text = pTags[1].textContent.toLowerCase()
+
+		const matchesSearch = heading.includes(searchTerm) || text.includes(searchTerm);
+
+		if (matchesSearch) {
+			item.style.display = '';
+		} else {
+			item.style.display = 'none';
+		}
+	});
+});
+</script>
+
+	<footer>
+	  <p>&copy; 2023 Paritosh Kumar Tripathi. All rights reserved.</p>
+	</footer>
+
+	</body>
+	</html>
