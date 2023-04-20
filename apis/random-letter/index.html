@@ -1,0 +1,26 @@
+<html>
+<script>
+// Define an array of letters
+const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+// Function to return a random letter
+function getRandomLetter() {
+  const randomIndex = Math.floor(Math.random() * letters.length);
+  return letters[randomIndex];
+}
+
+// Function to navigate to JSON file URL
+function navigateToJSON(data, filename) {
+  const blob = new Blob([data], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  window.location.href = url;
+}
+
+// Get a random letter and create a JSON object
+const randomLetter = getRandomLetter();
+const json = JSON.stringify({ letter: randomLetter });
+
+// Navigate to JSON file URL
+navigateToJSON(json, 'random-letter.json');
+</script>
+</html>
